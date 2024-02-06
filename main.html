@@ -11,25 +11,28 @@
     />
   </head>
   <body>
-    <button
-      type="button"
-      class="btn btn-danger ms-4 mt-4"
-      data-bs-toggle="modal"
-      data-bs-target="#signupModal"
-    >
-      Sign Up
-    </button>
+    <div class="container">
+      <button
+        type="button"
+        class="btn btn-danger"
+        data-toggle="modal"
+        data-target="#form"
+      >
+        Sign Up
+      </button>
+    </div>
     <div
       class="modal fade"
-      id="signupModal"
+      id="form"
       tabindex="-1"
-      aria-labelledby="signupModalLabel"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="signupModalLabel">Create Account</h5>
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title" id="exampleModalLabel">Create Account</h5>
             <button
               type="button"
               class="close"
@@ -39,47 +42,46 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="emailInput" class="form-label">Email address</label>
+          <form>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="email1">Email address</label>
                 <input
                   type="email"
                   class="form-control"
-                  id="emailInput"
+                  id="email1"
+                  aria-describedby="emailHelp"
                   placeholder="Enter email"
-                  required
                 />
-                <div class="form-text">Your information is safe with us.</div>
-              </div>
-              <div class="mb-3">
-                <label for="passwordInput" class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="passwordInput"
-                  placeholder="Password"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="confirmPasswordInput" class="form-label"
-                  >Confirm Password</label
+                <small id="emailHelp" class="form-text text-muted"
+                  >Your information is safe with us.</small
                 >
+              </div>
+              <div class="form-group">
+                <label for="password1">Password</label>
                 <input
                   type="password"
                   class="form-control"
-                  id="confirmPasswordInput"
-                  placeholder="Confirm Password"
-                  required
+                  id="password1"
+                  placeholder="Password"
                 />
               </div>
-              <hr />
-              <button type="submit" class="btn btn-success float-end">
-                Submit
-              </button>
-            </form>
-          </div>
+              <div class="form-group">
+                <label for="password1">Confirm Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password2"
+                  placeholder="Confirm Password"
+                />
+              </div>
+            </div>
+            <div
+              class="modal-footer border-top-0 d-flex justify-content-center"
+            >
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
